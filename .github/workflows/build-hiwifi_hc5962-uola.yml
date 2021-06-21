@@ -1,0 +1,338 @@
+#=================================================
+# https://github.com/danxiaonuo/AutoBuild-Uola
+# Description: Build OpenWrt using GitHub Actions
+# Lisence: MIT
+# Author: danxiaonuo
+# Blog: https://www.danxiaonuo.com
+#=================================================
+
+# 编译的名称
+name: 编译Hiwifi_Hc5962 Uola固件
+
+# 设置触发条件
+on:
+  # 手动触发工作流
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'build-uola'
+        required: true
+        default: '编译Hiwifi_Hc5962 Uola固件'
+  # 定时触发编译(每天早5点)
+  schedule:
+    - cron: 0 21 * * 3
+  # 点赞☆Star触发编译
+  watch:
+     types: [started]
+
+# 任务集
+jobs:
+  uola:
+    # 选择虚拟环境
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    
+    # 编译版本选择
+    name: 编译 ${{matrix.devices}} ${{matrix.target}} 固件
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [uola]
+        devices: [hiwifi_hc5962]
+    
+    # 运行步骤
+    steps:
+    
+    # 检出各个代码模块
+    - name: 检出各个代码模块
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    
+    # 加载配置文件    
+    - name: 加载 Settings.ini
+      run: | 
+        source "${GITHUB_WORKSPACE}/os/${{matrix.target}}/${{matrix.devices}}/uola.ini"
+        echo "matrix_target=${{matrix.target}}" >> $GITHUB_ENV
+        echo "matrix_devices=${{matrix.devices}}" >> $GITHUB_ENV
+        echo "REPO_URL=${REPO_URL}" >> $GITHUB_ENV
+        echo "REPO_BRANCH=${REPO_BRANCH}" >> $GITHUB_ENV
+        echo "TZ=${TZ}" >> $GITHUB_ENV
+        echo "GITHUB_USER_NAME=${GITHUB_USER_NAME}" >> $GITHUB_ENV
+        echo "GITHUB_USER_EMAIL=${GITHUB_USER_EMAIL}" >> $GITHUB_ENV
+        echo "GITHUB_RROJECT=${GITHUB_RROJECT}" >> $GITHUB_ENV
+        echo "BRANCH=${BRANCH}" >> $GITHUB_ENV
+        echo "CONFIG_FILE=${CONFIG_FILE}" >> $GITHUB_ENV
+        echo "DIY_SH=${DIY_SH}" >> $GITHUB_ENV
+        echo "SSH_ACTIONS=${SSH_ACTIONS}" >> $GITHUB_ENV
+        echo "UPLOAD_BIN_DIR=${UPLOAD_BIN_DIR}" >> $GITHUB_ENV
+        echo "UPLOAD_FIRMWARE=${UPLOAD_FIRMWARE}" >> $GITHUB_ENV
+        echo "UPLOAD_COWTRANSFER=${UPLOAD_COWTRANSFER}" >> $GITHUB_ENV
+        echo "UPLOAD_WETRANSFER=${UPLOAD_WETRANSFER}" >> $GITHUB_ENV
+        echo "UPLOAD_BRANCH=${UPLOAD_BRANCH}" >> $GITHUB_ENV
+        echo "UPLOAD_BRANCH=${UPLOAD_BRANCH}" >> $GITHUB_ENV
+        echo "CREATE_RELEASE=${CREATE_RELEASE}" >> $GITHUB_ENV
+        echo "BUILD_USER=${BUILD_USER}" >> $GITHUB_ENV
+        echo "SEND_WECHAT_MSG=${SEND_WECHAT_MSG}" >> $GITHUB_ENV
+        echo "GITHUB_PATH=${GITHUB_PATH}" >> $GITHUB_ENV
+        echo "GITHUB_RELEASE=${GITHUB_RELEASE}" >> $GITHUB_ENV
+        
+    # 初始化系统环境
+    - name: 初始化系统环境
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        sudo -E docker rmi -f $(docker images -q)
+        sudo -E rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
+        sudo -E apt-get -qqy purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php* android*
+        sudo -E apt-get update -qqy && sudo -E apt-get upgrade -qqy
+        sudo -E apt-get install -qqy git sudo wget curl zsh vim nano tmux tree htop screen rsync gnupg ca-certificates uuid-runtime tzdata openssh-server lrzsz xz-utils
+        sudo -E apt-get install -qqy $(curl -fsSL git.io/depends-ubuntu-2004) tree
+        sudo -E apt-get -qqy autoremove --purge
+        sudo -E apt-get -qqy clean
+        sudo -E timedatectl set-timezone "$TZ" 
+        
+    # 克隆源码
+    - name: 克隆源码
+      run: |
+        git clone --depth 1 $REPO_URL -b $REPO_BRANCH uola
+        cd uola
+        echo "UOLAROOT=$PWD" >> $GITHUB_ENV
+        echo "::set-output name=UOLAROOT::$(echo $PWD)"
+        echo "useVersionInfo=$(git show -s --date=short --format="作者: %an<br/>日期: %cd<br/>Commit: %s")" >> $GITHUB_ENV
+        echo "DATE=$(TZ=CST-8 date "+%Y年%m月%d号-%H点%M分%S秒")" >> $GITHUB_ENV
+        echo "RELEASE_DATE=$(TZ=CST-8 date "+%Y%m%d%H%M%S")" >> $GITHUB_ENV
+    
+    # 更新源
+    - name: 更新源
+      working-directory: ./uola
+      run:  |
+        ./scripts/feeds clean
+        ./scripts/feeds update -a
+       
+    # 安装源
+    - name: 安装源
+      working-directory: ./uola
+      run:  |
+        ./scripts/feeds install -a
+    
+    # 加载自定义配置文件
+    - name: 加载自定义配置文件
+      run: |
+        [ -e files ] && mv files $UOLAROOT/files
+        [ -e ${GITHUB_WORKSPACE}/os/${{matrix.target}}/${{matrix.devices}}/$CONFIG_FILE ] && mv ${GITHUB_WORKSPACE}/os/${{matrix.target}}/${{matrix.devices}}/$CONFIG_FILE $UOLAROOT/.config
+        
+    # 生成配置文件
+    - name: 生成配置文件
+      working-directory: ./uola
+      run: | 
+        make defconfig
+    
+    # 下载固件包
+    - name: 下载固件包
+      working-directory: ./uola
+      id: package
+      run: |
+        make -j$(($(nproc)+1)) download v=s
+        find dl -size -1024c -exec ls -l {} \;
+        find dl -size -1024c -exec rm -f {} \; 
+           
+    # 编译固件
+    - name: 编译固件
+      working-directory: ./uola
+      id: compile
+      run: |
+        cd $UOLAROOT
+        echo -e "$(($(nproc)+1)) thread compile"
+        make tools/compile -j$(($(nproc)+1)) || make tools/compile -j1 V=s
+        make toolchain/compile -j$(($(nproc)+1)) || make toolchain/compile -j1 V=s
+        make target/compile -j$(($(nproc)+1)) || make target/compile -j1 V=s IGNORE_ERRORS=1
+        make diffconfig
+        make package/compile -j$(($(nproc)+1)) IGNORE_ERRORS=1 || make package/compile -j1 V=s IGNORE_ERRORS=1
+        make package/index
+        echo "::set-output name=status::success"
+        
+    
+    # 设置环境变量
+    - name: 设置环境变量
+      if: steps.compile.outputs.status == 'success'
+      run: |
+        cd $UOLAROOT/bin/packages/*
+        PLATFORM=$(basename `pwd`)
+        echo "PLATFORM=$PLATFORM" >> $GITHUB_ENV
+        echo "::set-output name=PLATFORM::$(echo $PLATFORM)"
+        cd $UOLAROOT/bin/targets/*
+        TARGET=$(basename `pwd`)
+        echo "TARGET=$TARGET" >> $GITHUB_ENV
+        echo "::set-output name=TARGET::$(echo $TARGET)"
+        cd *
+        SUBTARGET=$(basename `pwd`)
+        echo "SUBTARGET=$SUBTARGET" >> $GITHUB_ENV
+        echo "::set-output name=SUBTARGET::$(echo $SUBTARGET)"
+        echo "FIRMWARE=$PWD" >> $GITHUB_ENV
+        echo "::set-output name=FIRMWARE::$(echo $PWD)"
+        
+    # 获取固件
+    - name: 获取固件
+      working-directory: ./uola
+      if: steps.compile.outputs.status == 'success'
+      id: generate
+      run: |
+        make package/install -j$(($(nproc)+1)) || make package/install -j1 V=s
+        make target/install -j$(($(nproc)+1)) || make target/install -j1 V=s
+        make checksum
+        echo "::set-output name=GENERATE_STATUS::success"
+        grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
+        [ -s DEVICE_NAME ] && echo "DEVICE_NAME=$(cat DEVICE_NAME)" >> $GITHUB_ENV
+    
+    # 上传到分支
+    - name: 上传到分支
+      if: steps.compile.outputs.status == 'success' && env.UPLOAD_BRANCH == 'true' && !cancelled() 
+      env:
+          GITHUB_TOKEN: ${{ secrets.UOLA_TOKEN }}
+      run: |
+          cd $UOLAROOT/bin
+          git init
+          git config user.name $GITHUB_USER_NAME
+          git config user.email $GITHUB_USER_EMAIL
+          git add .
+          git commit -m "Update Uola"
+          git push --force --quiet https://${{ env.GITHUB_TOKEN }}@$GITHUB_RROJECT HEAD:$BRANCH
+      
+    # 准备文件
+    - name: 准备文件
+      run: |
+          sudo mkdir -p -m 777 $UOLAROOT/artifact/firmware && cd $UOLAROOT/artifact/firmware
+          echo "ARTIFACT_FIRMWARE=$PWD" >> $GITHUB_ENV
+          echo "::set-output name=ARTIFACT_FIRMWARE::$(echo $PWD)"
+          sudo mkdir -p -m 777 $UOLAROOT/artifact/package && cd $UOLAROOT/artifact/package
+          echo "ARTIFACT_PACKAGE=$PWD" >> $GITHUB_ENV
+          echo "::set-output name=ARTIFACT_PACKAGE::$(echo $PWD)"
+          sudo mkdir -p -m 777 $UOLAROOT/artifact/buildinfo && cd $UOLAROOT/artifact/buildinfo
+          echo "ARTIFACT_BUILDINFO=$PWD" >> $GITHUB_ENV
+          echo "::set-output name=ARTIFACT_BUILDINFO::$(echo $PWD)"
+          
+    # 整理文件
+    - name: 整理文件
+      id: organize
+      if: steps.compile.outputs.status == 'success' && env.UPLOAD_FIRMWARE == 'true' && !cancelled()
+      run: |
+        cd $UOLAROOT && sudo -E cat .config > $ARTIFACT_BUILDINFO/config.info
+        rm -rf $(find $UOLAROOT/bin/targets/ -type d -name "packages")
+        cp -rf $(find $UOLAROOT/bin/targets/ -type f) $ARTIFACT_FIRMWARE
+        cp -rf $(find $UOLAROOT/bin/packages/ -type f -name "*.ipk") $ARTIFACT_PACKAGE
+        cp -rf $(find $UOLAROOT/bin/targets/ -type f -name "*.buildinfo" -o -name "*.manifest") $ARTIFACT_BUILDINFO
+        echo "::set-output name=status::success" 
+    
+    - name: 编译 & 上传 Docker Image 至 Dockerhub
+      run: |
+          cd ${FIRMWARE}
+          docker import openwrt-$TARGET-$SUBTARGET-$DEVICE_NAME-rootfs.tar.gz danxiaonuo/uola:${{matrix.devices}}
+          docker login -u danxiaonuo -p ${{ secrets.DOCKER_HUB_PWD }}
+          docker push danxiaonuo/uola:${{matrix.devices}}
+    
+    - name: 上传 Docker Image 至 Aliyun Docker Registry
+      run: |
+          docker login -u ${{ secrets.ALIYUN_USERNAME }} -p ${{ secrets.ALIYUN_PWD }} registry.cn-hongkong.aliyuncs.com
+          docker tag danxiaonuo/uola:${{matrix.devices}} registry.cn-hongkong.aliyuncs.com/danxiaonuo/uola:${{matrix.devices}}
+          docker push registry.cn-hongkong.aliyuncs.com/danxiaonuo/uola:${{matrix.devices}}
+          
+    # 生成标签
+    - name: 生成标签
+      id: tag
+      if: steps.compile.outputs.status == 'success' && env.CREATE_RELEASE == 'true' && !cancelled()
+      run: |
+        echo "RELEASE_TAG=${{ env.BRANCH }}-${{ env.RELEASE_DATE }}" >> $GITHUB_ENV
+        echo "::set-output name=status::success"
+    
+    # 上传固件信息
+    - name: 上传固件信息
+      uses: actions/upload-artifact@v2
+      if: steps.organize.outputs.status == 'success' && !cancelled()
+      with:
+          name: Uola_buildinfo
+          path: ${{ env.ARTIFACT_BUILDINFO }}
+
+    # 上传固件包文件
+    - name: 上传固件包文件
+      uses: actions/upload-artifact@v2
+      if: steps.organize.outputs.status == 'success' && !cancelled()
+      with:
+        name: Uola_package
+        path: ${{ env.ARTIFACT_PACKAGE }}
+    
+    # 上传固件
+    - name: 上传固件
+      uses: actions/upload-artifact@v2
+      if: steps.organize.outputs.status == 'success' && !cancelled()
+      with:
+        name: Uola_firmware
+        path: ${{ env.FIRMWARE }}
+    
+    # 上传固件到奶牛快传
+    - name: 上传固件到奶牛快传
+      id: cowtransfer
+      if: steps.organize.outputs.status == 'success' && env.UPLOAD_COWTRANSFER == 'true' && !cancelled()
+      run: |
+        curl -fsSL git.io/file-transfer | sh
+        ./transfer cow --block 2621440 -s -p 64 --no-progress ${FIRMWARE} 2>&1 | tee cowtransfer.log
+        echo "::warning file=cowtransfer.com::$(cat cowtransfer.log | grep https)"
+        echo "COWTRANSFER_URL=$(cat cowtransfer.log | grep https | cut -f3 -d" ")" >> $GITHUB_ENV 
+        echo "::set-output name=COWTRANSFER_URL::$(cat cowtransfer.log | grep https | cut -f3 -d" ")"
+    
+    # 上传固件到WeTransfer
+    - name: 上传固件到WeTransfer
+      id: wetransfer
+      if: steps.organize.outputs.status == 'success' && env.UPLOAD_WETRANSFER == 'true' && !cancelled()
+      run: |
+        curl -fsSL git.io/file-transfer | sh
+        ./transfer wet -s -p 16 --no-progress ${FIRMWARE} 2>&1 | tee wetransfer.log
+        echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
+        echo "WETRANSFER_URL=$(cat wetransfer.log | grep https | cut -f3 -d" ")" >> $GITHUB_ENV 
+        echo "::set-output name=WETRANSFER_URL::$(cat wetransfer.log | grep https | cut -f3 -d" ")"
+    
+    # 发行固件
+    - name: 发行固件
+      uses: softprops/action-gh-release@v1
+      if: steps.tag.outputs.status == 'success' && !cancelled()
+      env:
+        GITHUB_TOKEN: ${{ secrets.UOLA_TOKEN }}
+      with:
+        name: 自动编译 / ${{ env.RELEASE_TAG }}
+        tag_name: ${{ env.RELEASE_TAG }}
+        body: |            
+            1、本固件为自动编译
+            2、发行版中只提供完整的固件
+            3、需要单独IPK请到分支下载
+            4、源码：${{ env.REPO_URL }}
+            -- Build by ${{ env.BUILD_USER }} @ with Github Action on ${{ env.RELEASE_TAG }}
+            🚀 Auto build | 自动编译
+            🔗 [Cowtransfer | 奶牛快传](${{ steps.cowtransfer.outputs.COWTRANSFER_URL }}) 
+            🔗 [WeTransfer](${{ steps.wetransfer.outputs.WETRANSFER_URL }})       
+            当前使用版本:            
+            ${{ env.useVersionInfo }}
+            ${{ github.event.commits[0].message }}
+        files: ${{ env.ARTIFACT_FIRMWARE }}/*
+
+    # 微信通知
+    - name: 微信通知
+      if: steps.compile.outputs.status == 'success' && env.SEND_WECHAT_MSG == 'true' && !cancelled()
+      uses: emon100/Action-Serverchan@master
+      with:
+        SCKEY: ${{ secrets.SCKEY }}
+        text: ${{ env.BRANCH }} 固件编译完成！
+        desp: 固件名称:${{ env.BRANCH }} 固件地址:${{ env.GITHUB_RELEASE }}/tag/${{ env.RELEASE_TAG }}
+    
+    - name: 删除旧的GitHub-workflow
+      uses: Mattraks/delete-workflow-runs@main
+      with:
+        retain_days: 1
+        keep_minimum_runs: 1    #保留多少个workflow不删除
+
+    - name: 删除自动发布的旧固件
+      uses: dev-drprasad/delete-older-releases@v0.2.0
+      with:
+        keep_latest: 3         #保留多少个releases不删除
+        delete_tags: true
+      env:
+          GITHUB_TOKEN: ${{ secrets.UOLA_TOKEN }}
