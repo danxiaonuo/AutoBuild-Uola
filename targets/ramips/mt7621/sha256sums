@@ -1,0 +1,5 @@
+6b4ac550fa8d9016e6503e950a61ef90e31c3e80fd15fd71cac7990d84113fe4 *config.buildinfo
+35850d7bf937f8d43555b1654a80ba991e0b06b9890ace30a65b82ad4cc859d5 *openwrt-ramips-mt7621-d-team_newifi-d2-initramfs-kernel.bin
+070f746837c9e2681b70915ae91dffbb47b2ea5bd855d86aeb36cd23d7b4cae2 *openwrt-ramips-mt7621-d-team_newifi-d2-rootfs.tar.gz
+d61ef42893b3b5374687de02e9a6061c1117ed481e7331100bd753bbe53c72af *openwrt-ramips-mt7621-d-team_newifi-d2-squashfs-sysupgrade.bin
+b4f2b631d2e442a2f7c144667daa2681aa63e0b2fd6402c3a30c7942b8ae2c42 *openwrt-ramips-mt7621-d-team_newifi-d2.manifest
