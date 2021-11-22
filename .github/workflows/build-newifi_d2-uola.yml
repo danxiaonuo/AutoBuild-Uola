@@ -46,8 +46,6 @@ jobs:
     # 检出各个代码模块
     - name: 检出各个代码模块
       uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
     
     # 加载配置文件    
     - name: 加载 Settings.ini
