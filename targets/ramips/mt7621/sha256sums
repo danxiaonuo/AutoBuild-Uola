@@ -1,0 +1,4 @@
+47ff25736df22ee8becb346caba877704bfa2d591555780c8291226fe3ab78d8 *config.buildinfo
+a6b7153f3ebd67466bc2a334c11cdd3f792c39e6e8c819bd866d4e58e25dc60e *openwrt-ramips-mt7621-xiaomi_mi-router-4a-gigabit-initramfs-kernel.bin
+fa0e9c25963f35e0c751153b36c38eff62eefc813bfdd55213c131ed68a75e8a *openwrt-ramips-mt7621-xiaomi_mi-router-4a-gigabit-rootfs.tar.gz
+21d513f32c95f78ca9d1135d0bc46b5db3bf3a5b81a69639cea559fc3fa940f0 *openwrt-ramips-mt7621-xiaomi_mi-router-4a-gigabit.manifest

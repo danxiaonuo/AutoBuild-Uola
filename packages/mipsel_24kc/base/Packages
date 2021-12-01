@@ -1,0 +1,1578 @@
+Package: 6in4
+Version: 26
+Depends: libc, kmod-sit, uclient-fetch
+License: GPL-2.0
+Section: net
+Architecture: all
+Installed-Size: 1704
+Filename: 6in4_26_all.ipk
+Size: 2526
+SHA256sum: 5060cf79436998bb3ec9d1e77944c74f0d24a491946ec5988120894202f80614
+Description:  Provides support for 6in4 tunnels in /etc/config/network.
+ Refer to http://wiki.openwrt.org/doc/uci/network for
+ configuration details.
+
+Package: automount
+Version: 1-34
+Depends: libc, block-mount, kmod-usb-storage, kmod-usb-storage-extras, kmod-fs-vfat, kmod-fs-ext4, kmod-fs-exfat, antfs-mount, libblkid1
+Section: opt
+Architecture: mipsel_24kc
+Installed-Size: 690
+Filename: automount_1-34_mipsel_24kc.ipk
+Size: 1457
+SHA256sum: 36e56ac6a78893b471ba59bf6330a976865713ed7f3ff000b8c5358d3e0bab5c
+Description:  A usb autoconfig hotplug script.
+
+Package: autosamba
+Version: 1-11
+Depends: libc, luci-app-samba, wsdd2
+Section: opt
+Architecture: mipsel_24kc
+Installed-Size: 1147
+Filename: autosamba_1-11_mipsel_24kc.ipk
+Size: 1890
+SHA256sum: 21f10199c69fcb4c65c24c5ef058762d3097ffa9787ed65b468aee0763ea2fca
+Description:  A hotplug script to config Samba share automatically.
+
+Package: blkid
+Version: 2.37-1
+Depends: libc, libblkid1, libuuid1
+License: GPL-2.0-only
+Section: utils
+CPE-ID: cpe:/a:kernel:util-linux
+Architecture: mipsel_24kc
+Installed-Size: 37773
+Filename: blkid_2.37-1_mipsel_24kc.ipk
+Size: 38652
+SHA256sum: ac3ca3b061ced1a62c51df6dbb1f7104de5bf5f091f90914da71a506e423c018
+Description:  The blkid program is the command-line interface to working with the libblkid
+ library.
+
+Package: busybox
+Version: 1.33.1-1
+Depends: libc
+Conflicts: busybox-selinux
+License: GPL-2.0
+Section: base
+CPE-ID: cpe:/a:busybox:busybox
+Essential: yes
+Architecture: mipsel_24kc
+Installed-Size: 210809
+Filename: busybox_1.33.1-1_mipsel_24kc.ipk
+Size: 211193
+SHA256sum: 3b7ddbf924243b61b17d58115f4fefb9749801d0d7246467edb1c941d1f47cdb
+Description:  The Swiss Army Knife of embedded Linux.
+ It slices, it dices, it makes Julian Fries.
+
+Package: bzip2
+Version: 1.0.8-1
+Depends: libc, libbz2-1.0
+License: bzip2-1.0.8
+Section: utils
+CPE-ID: cpe:/a:bzip:bzip2
+Architecture: mipsel_24kc
+Installed-Size: 11628
+Filename: bzip2_1.0.8-1_mipsel_24kc.ipk
+Size: 12468
+SHA256sum: 21e65b8720fe712af439f7b807424007b7cf1691d0bd38c09f528204cd50ebff
+Description:  bzip2 is a freely available, patent free, high-quality
+ data compressor. This package provides the binary.
+
+Package: ca-bundle
+Version: 20210119-1
+Depends: libc
+Provides: ca-certs
+Section: base
+Architecture: all
+Installed-Size: 115933
+Filename: ca-bundle_20210119-1_all.ipk
+Size: 116746
+SHA256sum: 769c64875866537bcd1f66140693b99c7bc00fa562b4741e6fe2a31535d382b5
+Description:  System CA certificates as a bundle
+
+Package: ca-certificates
+Version: 20210119-1
+Depends: libc
+Provides: ca-certs
+Section: base
+Architecture: all
+Installed-Size: 125662
+Filename: ca-certificates_20210119-1_all.ipk
+Size: 126346
+SHA256sum: 369ecc2d041fba44a342aedfd027101695fa4e20a6c156092b7944b55be62cc8
+Description:  System CA certificates
+
+Package: ddns-scripts_aliyun
+Version: 1.0.3-1
+Depends: libc, ddns-scripts, wget-ssl, openssl-util
+License: GPLv2
+Section: net
+Architecture: all
+Installed-Size: 3727
+Filename: ddns-scripts_aliyun_1.0.3-1_all.ipk
+Size: 4816
+SHA256sum: c3c976edb9f09b37c2086af82953fec7173cdefdf77efd51b3e4ae193c19b87d
+Description:  Dynamic DNS Client scripts extension for AliYun.com
+
+Package: ddns-scripts_dnspod
+Version: 1.0.2-1
+Depends: libc, ddns-scripts, wget-ssl, ca-bundle
+License: GPLv2
+Section: net
+Architecture: all
+Installed-Size: 2588
+Filename: ddns-scripts_dnspod_1.0.2-1_all.ipk
+Size: 3699
+SHA256sum: 751eb502a78d6684f3354145d539b895e796f1745f89284f5a22627ece926439
+Description:  Dynamic DNS Client scripts extension for Dnspod.com/Dnspod.cn
+
+Package: default-settings
+Version: 2-9
+Depends: libc, luci-base, luci, luci-compat
+License: GPLv3
+Section: luci
+Architecture: all
+Installed-Size: 15502
+Filename: default-settings_2-9_all.ipk
+Size: 16218
+SHA256sum: 6891bcb57077edea7b00d210db55a691998d0094ff5d67fc9c01f6356675c034
+Description:  Language Support Packages.
+
+Package: dnsmasq-full
+Version: 2.86-1
+Depends: libc, libubus20210603, kmod-ipt-ipset
+Provides: dnsmasq
+License: GPL-2.0
+Section: net
+CPE-ID: cpe:/a:thekelleys:dnsmasq
+Architecture: mipsel_24kc
+Installed-Size: 129323
+Filename: dnsmasq-full_2.86-1_mipsel_24kc.ipk
+Size: 130087
+SHA256sum: d3a44f0a1e6cbe97399f45f36a62c11af5eb162bed60aa109af6acc3c943efa7
+Description:  It is intended to provide coupled DNS and DHCP service to a LAN.
+ 
+ This is a fully configurable variant with DHCPv4, DHCPv6, DNSSEC, Authoritative DNS
+ and IPset, Conntrack support & NO_ID enabled by default.
+
+Package: e2fsprogs
+Version: 1.45.6-2
+Depends: libc, libuuid1, libext2fs2
+License: GPL-2.0
+Section: utils
+CPE-ID: cpe:/a:e2fsprogs_project:e2fsprogs
+Architecture: mipsel_24kc
+Installed-Size: 158817
+Filename: e2fsprogs_1.45.6-2_mipsel_24kc.ipk
+Size: 159150
+SHA256sum: 9598097092f16f9cf966bba536f102f598f89454c177b163f4921b585fd518c7
+Description:  This package contains essential ext2 filesystem utilities which consists of
+ e2fsck, mke2fs and most of the other core ext2 filesystem utilities.
+
+Package: edgeport-firmware
+Version: 20210511-1
+Depends: libc
+Section: firmware
+Architecture: mipsel_24kc
+Installed-Size: 18904
+Filename: edgeport-firmware_20210511-1_mipsel_24kc.ipk
+Size: 19596
+SHA256sum: 587193ce7387d994c831596e0887617237ab3aac76533897c38b2122645ff51c
+Description:  USB Inside Out Edgeport Serial Driver firmware
+
+Package: fdisk
+Version: 2.37-1
+Depends: libc, libblkid1, libsmartcols1, libfdisk1, libncursesw6
+License: GPL-2.0-only
+Section: utils
+CPE-ID: cpe:/a:kernel:util-linux
+Architecture: mipsel_24kc
+Installed-Size: 48860
+Filename: fdisk_2.37-1_mipsel_24kc.ipk
+Size: 49517
+SHA256sum: ade547a589d770cc52aab5ed457c170adf94f34b1e1338104fc836c40fbb89fb
+Description:  a menu-driven program for creation and manipulation of partition tables
+
+Package: firewall
+Version: 2021-08-14-40e5f6a2-1
+Depends: libc, libubox20210516, libubus20210603, libuci20130104, libip4tc2, libip6tc2, libxtables12, kmod-ipt-core, kmod-ipt-conntrack, kmod-nf-conntrack6, kmod-ipt-nat, iptables-mod-fullconenat
+License: ISC
+Section: net
+Architecture: mipsel_24kc
+Installed-Size: 41749
+Filename: firewall_2021-08-14-40e5f6a2-1_mipsel_24kc.ipk
+Size: 42640
+SHA256sum: 8851d00b8ec206a87ed7846824de4f8477720c32c4176218c76aae57deca6276
+Description:  This package provides a config-compatible C implementation of the UCI firewall.
+
+Package: frpc
+Version: 0.38.0
+Depends: libc
+License: Apache-2.0
+Section: net
+Architecture: mipsel_24kc
+Installed-Size: 2435139
+Filename: frpc_0.38.0_mipsel_24kc.ipk
+Size: 2436538
+SHA256sum: a18d17c9ad564e2b7c4baf12f8d68bf566c392847914771be88975787d8fce93
+Description:  frp is a fast reverse proxy to help you expose a local server behind a NAT or firewall
+ to the internet. As of now, it supports tcp & udp, as well as http and https protocols,
+ where requests can be forwarded to internal services by domain name.
+ 
+ This package contains the frpc.
+
+Package: getrandom
+Version: 2020-10-25-9ef88681-2
+Depends: libc
+License: GPL-2.0
+Section: base
+Architecture: mipsel_24kc
+Installed-Size: 1655
+Filename: getrandom_2020-10-25-9ef88681-2_mipsel_24kc.ipk
+Size: 2433
+SHA256sum: 12d99cd623b01fe2c1bda26bf398e35d3a331c8cb3f402e67bba98ddfd159419
+Description:  OpenWrt getrandom system helper
+
+Package: hostapd-common
+Version: 2021-05-22-b102f19b-1
+Depends: libc
+License: BSD-3-Clause
+Section: net
+CPE-ID: cpe:/a:w1.fi:hostapd
+Architecture: mipsel_24kc
+Installed-Size: 11653
+Filename: hostapd-common_2021-05-22-b102f19b-1_mipsel_24kc.ipk
+Size: 12432
+SHA256sum: d00141ec8dfb65d3e0c8e11ba6e9e4b7e53ec188dd9060e62cf79ee02d2585c7
+Description:  hostapd/wpa_supplicant common support files
+
+Package: ip-tiny
+Version: 5.14.0-1
+Depends: libc, libnl-tiny1
+Provides: ip
+Alternatives: 200:/sbin/ip:/usr/libexec/ip-tiny
+License: GPL-2.0
+Section: net
+CPE-ID: cpe:/a:iproute2_project:iproute2
+Architecture: mipsel_24kc
+Installed-Size: 120641
+Filename: ip-tiny_5.14.0-1_mipsel_24kc.ipk
+Size: 121556
+SHA256sum: fa641a998273bb8e582c91c9a61ddeba51786250aefb6899e52ae737659e2ce9
+Description:  Routing control utility (minimal)
+
+Package: ipset
+Version: 7.6-1
+Depends: libc, kmod-ipt-ipset, libmnl0, libipset13
+License: GPL-2.0
+Section: net
+Architecture: mipsel_24kc
+Installed-Size: 1379
+Filename: ipset_7.6-1_mipsel_24kc.ipk
+Size: 2156
+SHA256sum: 882f27d8bbd277e57469550976cc36b0d5f7019e9ac7c6a54ba3d2b34df6487a
+Description:  IPset administration utility
+
+Package: iptables-mod-fullconenat
+Version: 2019-10-21-0cf3b48f-3
+Depends: libc, iptables, kmod-ipt-fullconenat
+License: GPL-2.0
+Section: net
+Architecture: mipsel_24kc
+Installed-Size: 2291
+Filename: iptables-mod-fullconenat_2019-10-21-0cf3b48f-3_mipsel_24kc.ipk
+Size: 3103
+SHA256sum: 71c89b7d5b5e59839ad36d43e1f83ba3a42334547af8c813b163921d6c2f0e9f
+Description:  FULLCONENAT iptables extension
+
+Package: ipv6helper
+Version: 1.0-2
+Depends: libc, luci-proto-ipv6, wget, ip6tables, libip6tc2, kmod-ipt-nat6, odhcpd-ipv6only, odhcp6c, 6in4
+License: GPLv3
+Section: ipv6
+Architecture: all
+Installed-Size: 409
+Filename: ipv6helper_1.0-2_all.ipk
+Size: 1314
+SHA256sum: 0e5655aa2c615799a06fdff2e93480528b70a0f924c319de105cf25faec2a960
+Description:  IPv6 Helper and Dynamic Update he.net of ip
+
+Package: iw
+Version: 5.9-8fab0c9e-1
+Depends: libc, libnl-tiny1
+License: GPL-2.0
+Section: net
+Architecture: mipsel_24kc
+Installed-Size: 39611
+Filename: iw_5.9-8fab0c9e-1_mipsel_24kc.ipk
+Size: 40412
+SHA256sum: e7f4031e1dfd1202be29ddc20e07076bf438c246272e341bbca01fe7b6afaf8c
+Description:  cfg80211 interface configuration utility
+
+Package: jsonfilter
+Version: 2018-02-04-c7e938d6-1
+Depends: libc, libubox20210516, libjson-c5
+License: ISC
+Section: base
+Architecture: mipsel_24kc
+Installed-Size: 8295
+Filename: jsonfilter_2018-02-04-c7e938d6-1_mipsel_24kc.ipk
+Size: 9100
+SHA256sum: 2b09417b7ee452180eb80279da9c377598297e0770dc8f4bc0f25fb198ed111b
+Description:  OpenWrt JSON filter utility
+
+Package: libblkid1
+Version: 2.37-1
+Depends: libc, libuuid1
+Provides: libblkid
+License: GPL-2.0-only
+Section: libs
+ABIVersion: 1
+CPE-ID: cpe:/a:kernel:util-linux
+Architecture: mipsel_24kc
+Installed-Size: 116235
+Filename: libblkid1_2.37-1_mipsel_24kc.ipk
+Size: 117159
+SHA256sum: f4deac4c09d5d5018f7979be00f8194935ca2bc1f33342505ecbed10303a39ac
+Description:  The libblkid library is used to identify block devices (disks) as to their
+ content (e.g. filesystem type, partitions) as well as extracting additional
+ information such as filesystem labels/volume names, partitions, unique
+ identifiers/serial numbers...
+
+Package: libbz2-1.0
+Version: 1.0.8-1
+Depends: libc
+Provides: libbz2
+License: bzip2-1.0.8
+Section: libs
+ABIVersion: -1.0
+CPE-ID: cpe:/a:bzip:bzip2
+Architecture: mipsel_24kc
+Installed-Size: 22874
+Filename: libbz2-1.0_1.0.8-1_mipsel_24kc.ipk
+Size: 23686
+SHA256sum: 1d8cffb0e99a34b428f492dc0046ebc5cc74351dffc1db63aa90f0a8c3c35c3d
+Description:  bzip2 is a freely available, patent free, high-quality
+ data compressor. This packages provides libbz2 library.
+
+Package: libcap
+Version: 2.51-1
+Depends: libc
+License: GPL-2.0-only
+Section: libs
+Architecture: mipsel_24kc
+Installed-Size: 10257
+Filename: libcap_2.51-1_mipsel_24kc.ipk
+Size: 11024
+SHA256sum: 190f101e5a0081aaa900dce15bc2afd6cd128eed690120733ecd2aed14fb767d
+Description:  Linux capabilities library library
+
+Package: libcomerr0
+Version: 1.45.6-2
+Depends: libc, libuuid1
+Provides: libcomerr
+License: GPL-2.0
+Section: libs
+ABIVersion: 0
+CPE-ID: cpe:/a:e2fsprogs_project:e2fsprogs
+Architecture: mipsel_24kc
+Installed-Size: 3602
+Filename: libcomerr0_1.45.6-2_mipsel_24kc.ipk
+Size: 4384
+SHA256sum: ca549272e56987f7bfcfe8ad3aab66a1e71e71f25f926b399ce8b95b70c3d5f1
+Description:  This package contains libcom_err, the common error description library
+ bundled with e2fsprogs.
+
+Package: libext2fs2
+Version: 1.45.6-2
+Depends: libc, libuuid1, libblkid1, libss2, libcomerr0
+Provides: libext2fs
+License: GPL-2.0
+Section: libs
+ABIVersion: 2
+CPE-ID: cpe:/a:e2fsprogs_project:e2fsprogs
+Architecture: mipsel_24kc
+Installed-Size: 167157
+Filename: libext2fs2_1.45.6-2_mipsel_24kc.ipk
+Size: 167748
+SHA256sum: d61280a286f71e1828ce44bad8d70a3b9f26d6506b3fce52bdd7224cf90b5a27
+Description:  libext2fs is a library which can access ext2, ext3 and ext4 filesystems.
+
+Package: libfdisk1
+Version: 2.37-1
+Depends: libc, libuuid1, libblkid1
+Provides: libfdisk
+License: GPL-2.0-only
+Section: libs
+ABIVersion: 1
+CPE-ID: cpe:/a:kernel:util-linux
+Architecture: mipsel_24kc
+Installed-Size: 150839
+Filename: libfdisk1_2.37-1_mipsel_24kc.ipk
+Size: 151780
+SHA256sum: c2a34fc551b730cf43b2849e6f2e3f5ffffc5ef922c7465f4300afdbe87d7207
+Description:  The libfdisk library is used for manipulating with partition tables.
+
+Package: libgmp10
+Version: 6.2.1-1
+Depends: libc
+Provides: libgmp
+License: GPL-2.0-or-later
+Section: libs
+ABIVersion: 10
+Architecture: mipsel_24kc
+Installed-Size: 217897
+Filename: libgmp10_6.2.1-1_mipsel_24kc.ipk
+Size: 218589
+SHA256sum: a5b13e3e4508b03d466f0dc8ecbd18c208e1fe35b606d6722b4f00782d675de1
+Description:  GMP is a free library for arbitrary precision arithmetic, operating on
+ signed integers, rational numbers, and floating point numbers.
+
+Package: libipset13
+Version: 7.6-1
+Depends: libc, kmod-ipt-ipset, libmnl0
+Provides: libipset
+License: GPL-2.0
+Section: net
+ABIVersion: 13
+Architecture: mipsel_24kc
+Installed-Size: 40166
+Filename: libipset13_7.6-1_mipsel_24kc.ipk
+Size: 40803
+SHA256sum: fb69406dacb70879e7c5657467c80e25b84c7e1fb498773524e2bbb787dd316a
+Description:  IPset administration utility
+
+Package: libmnl0
+Version: 1.0.4-2
+Depends: libc
+Provides: libmnl
+License: LGPL-2.1+
+Section: libs
+ABIVersion: 0
+Architecture: mipsel_24kc
+Installed-Size: 5257
+Filename: libmnl0_1.0.4-2_mipsel_24kc.ipk
+Size: 6499
+SHA256sum: a9bc5911a78396907deeff3384c7259d30def1a875d19357496916229c1c7311
+Description:  libmnl is a minimalistic user-space library oriented to Netlink developers.
+ There are a lot of common tasks in parsing, validating, constructing of
+ both the Netlink header and TLVs that are repetitive and easy to get wrong.
+ This library aims to provide simple helpers that allows you to re-use code
+ and to avoid re-inventing the wheel. The main features of this library are:
+ .
+ * Small: the shared library requires around 30KB for an x86-based computer.
+ .
+ * Simple: this library avoids complexity and elaborated abstractions that
+ tend to hide Netlink details.
+ .
+ * Easy to use: the library simplifies the work for Netlink-wise developers.
+ It provides functions to make socket handling, message building, validating,
+ parsing and sequence tracking, easier.
+ .
+ * Easy to re-use: you can use the library to build your own abstraction layer
+ on top of this library.
+ .
+ * Decoupling: the interdependency of the main bricks that compose the library
+ is reduced, i.e. the library provides many helpers, but the programmer is not
+ forced to use them.
+
+Package: libmount1
+Version: 2.37-1
+Depends: libc, libblkid1
+Provides: libmount
+License: GPL-2.0-only
+Section: libs
+ABIVersion: 1
+CPE-ID: cpe:/a:kernel:util-linux
+Architecture: mipsel_24kc
+Installed-Size: 118550
+Filename: libmount1_2.37-1_mipsel_24kc.ipk
+Size: 119492
+SHA256sum: 255ce564714587024b32162bd36a8c864135e3c5f69dac0f9148c5642a416ab6
+Description:  The libmount library is used to parse /etc/fstab, /etc/mtab and
+ /proc/self/mountinfo files, manage the mtab file, evaluate mount options...
+
+Package: libncurses6
+Version: 6.2-2
+Depends: libc, terminfo
+Provides: libncursesw, libncurses, libncursesw6
+License: MIT
+Section: libs
+ABIVersion: 6
+Architecture: mipsel_24kc
+Installed-Size: 148780
+Filename: libncurses6_6.2-2_mipsel_24kc.ipk
+Size: 147297
+SHA256sum: d517c78d7d320bef32b78162d2e762b03d9c9882ac2d5c3bb35ad8170b3737e9
+Description:  Terminal handling library (Unicode)
+
+Package: libnettle8
+Version: 3.7.3-1
+Depends: libc, libgmp10
+Provides: libnettle
+License: GPL-2.0-or-later
+Section: libs
+ABIVersion: 8
+Architecture: mipsel_24kc
+Installed-Size: 329924
+Filename: libnettle8_3.7.3-1_mipsel_24kc.ipk
+Size: 329931
+SHA256sum: 53f3498ae68547549b611a95a95342b58e6f389011dbeb0ffc3c0e70bdaa3fbd
+Description:  GNU crypto library
+
+Package: libopenssl-conf
+Version: 1.1.1l-1
+Depends: libc, libopenssl1.1
+License: OpenSSL
+Section: libs
+CPE-ID: cpe:/a:openssl:openssl
+Architecture: mipsel_24kc
+Installed-Size: 5071
+Filename: libopenssl-conf_1.1.1l-1_mipsel_24kc.ipk
+Size: 6074
+SHA256sum: e712066dc8437044b9954897d39136e7f96bd762cbd6212abcd597f48ea40ca2
+Description:  The OpenSSL Project is a collaborative effort to develop a robust,
+ commercial-grade, full-featured, and Open Source toolkit implementing the
+ Transport Layer Security (TLS) protocol as well as a full-strength
+ general-purpose cryptography library.
+ This package installs the OpenSSL configuration file /etc/ssl/openssl.cnf.
+
+Package: libopenssl1.1
+Version: 1.1.1l-1
+Depends: libc, kmod-crypto-user, kmod-cryptodev
+Provides: libopenssl
+License: OpenSSL
+Section: libs
+ABIVersion: 1.1
+CPE-ID: cpe:/a:openssl:openssl
+Architecture: mipsel_24kc
+Installed-Size: 1182575
+Filename: libopenssl1.1_1.1.1l-1_mipsel_24kc.ipk
+Size: 1172659
+SHA256sum: fe235b3745517144f3fc244e97a09f773d9305f1399804b2adc40e3a61fe2a47
+Description:  The OpenSSL Project is a collaborative effort to develop a robust,
+ commercial-grade, full-featured, and Open Source toolkit implementing the
+ Transport Layer Security (TLS) protocol as well as a full-strength
+ general-purpose cryptography library.
+ This package contains the OpenSSL shared libraries, needed by other programs.
+
+Package: libpcre
+Version: 8.44-4
+Depends: libc
+License: BSD-3-Clause
+Section: libs
+CPE-ID: cpe:/a:pcre:pcre
+Architecture: mipsel_24kc
+Installed-Size: 80402
+Filename: libpcre_8.44-4_mipsel_24kc.ipk
+Size: 81278
+SHA256sum: 724afbe14a1da17fa1fbb2ebc3432257a9daec9592d778fae15aec8c17b60256
+Description:  A Perl Compatible Regular Expression library
+
+Package: libreadline8
+Version: 8.1-1
+Depends: libc, libncursesw6
+Provides: libreadline
+License: GPL-3.0-or-later
+Section: libs
+ABIVersion: 8
+CPE-ID: cpe:/a:gnu:readline
+Architecture: mipsel_24kc
+Installed-Size: 110567
+Filename: libreadline8_8.1-1_mipsel_24kc.ipk
+Size: 110880
+SHA256sum: 8645a317e54ff6d39d7830e0650a755f709873718c393712792c0185fd3163b4
+Description:  The Readline library provides a set of functions for use by applications
+ that allow users to edit command lines as they are typed in. Both Emacs
+ and vi editing modes are available. The Readline library includes
+ additional functions to maintain a list of previously-entered command
+ lines, to recall and perhaps reedit those lines, and perform csh-like
+ history expansion on previous commands.
+
+Package: libsmartcols1
+Version: 2.37-1
+Depends: libc, librt
+Provides: libsmartcols
+License: GPL-2.0-only
+Section: libs
+ABIVersion: 1
+CPE-ID: cpe:/a:kernel:util-linux
+Architecture: mipsel_24kc
+Installed-Size: 72177
+Filename: libsmartcols1_2.37-1_mipsel_24kc.ipk
+Size: 73121
+SHA256sum: 776b59bf36bf492a0415612194927fa7765115c44cb4d4c84d9ef5518ed6f494
+Description:  The smartcols library is used to print tables and trees in a pretty way.
+
+Package: libss2
+Version: 1.45.6-2
+Depends: libc, libcomerr0
+Provides: libss
+License: GPL-2.0
+Section: libs
+ABIVersion: 2
+CPE-ID: cpe:/a:e2fsprogs_project:e2fsprogs
+Architecture: mipsel_24kc
+Installed-Size: 7632
+Filename: libss2_1.45.6-2_mipsel_24kc.ipk
+Size: 8475
+SHA256sum: 9aa59897b252465c4ffb694af35729cbdcc07bf2e8d76d866580a8691a4aae5f
+Description:  This pacakge contains libss, a command-line interface parsing library
+ bundled with e2fsprogs.
+
+Package: libsysfs2
+Version: 2.1.0-3
+Depends: libc
+Provides: libsysfs
+License: LGPL-2.1
+Section: libs
+ABIVersion: 2
+Architecture: mipsel_24kc
+Installed-Size: 10138
+Filename: libsysfs2_2.1.0-3_mipsel_24kc.ipk
+Size: 10983
+SHA256sum: 0f8a1c18a1a5b3aed580852fda09f0c8b70696a10952663798f629726ba728e9
+Description:  The library's purpose is to provide a consistant and stable interface for
+ querying system device information exposed through sysfs.
+
+Package: libuclient20201210
+Version: 2021-05-14-6a6011df-1
+Depends: libc, libubox20210516
+Provides: libuclient
+License: ISC
+Section: libs
+ABIVersion: 20201210
+Architecture: mipsel_24kc
+Installed-Size: 9264
+Filename: libuclient20201210_2021-05-14-6a6011df-1_mipsel_24kc.ipk
+Size: 10083
+SHA256sum: 088a2813e0109edfd57755801e73426df176ddd3cc7c5ce93eaeb96ac10cecce
+Description:  HTTP/1.1 client library
+
+Package: libusb-1.0-0
+Version: 1.0.24-1
+Depends: libc, libpthread, librt
+Provides: libusb-1.0
+License: LGPL-2.1-or-later
+Section: libs
+ABIVersion: -0
+Architecture: mipsel_24kc
+Installed-Size: 27899
+Filename: libusb-1.0-0_1.0.24-1_mipsel_24kc.ipk
+Size: 28751
+SHA256sum: 2cdf166382348f3933c34bb77386fe04c418df67bd20c4b1735eafbc2f53e92d
+Description:  libusb is a C library that gives applications easy access to USB devices on
+ many different operating systems.
+
+Package: libustream-openssl20201210
+Version: 2020-12-10-68d09243-2
+Depends: libc, libubox20210516, libopenssl1.1
+Provides: libustream-openssl
+License: ISC
+Section: libs
+ABIVersion: 20201210
+Architecture: mipsel_24kc
+Installed-Size: 4427
+Filename: libustream-openssl20201210_2020-12-10-68d09243-2_mipsel_24kc.ipk
+Size: 5204
+SHA256sum: f7e9db220715b6aea2061aed366e225549df9659d7db451fc5d181341752b6eb
+Description:  ustream SSL Library (openssl)
+
+Package: libuuid1
+Version: 2.37-1
+Depends: libc, librt
+Provides: libuuid
+License: GPL-2.0-only
+Section: libs
+ABIVersion: 1
+CPE-ID: cpe:/a:kernel:util-linux
+Architecture: mipsel_24kc
+Installed-Size: 12729
+Filename: libuuid1_2.37-1_mipsel_24kc.ipk
+Size: 13696
+SHA256sum: 6a4b3cdffa5d3299d1e7e52119924e7a7af281628a55bc4c6964bb88cbb5d67a
+Description:  The UUID library is used to generate unique identifiers for objects
+ that may be accessible beyond the local system. This library
+ generates UUIDs compatible with those created by the Open Software
+ Foundation (OSF) Distributed Computing Environment (DCE) utility.
+
+Package: logd
+Version: 2020-10-25-9ef88681-2
+Depends: libc, libubox20210516, libubus20210603, libblobmsg-json20210516
+License: GPL-2.0
+Section: base
+Architecture: mipsel_24kc
+Installed-Size: 9556
+Filename: logd_2020-10-25-9ef88681-2_mipsel_24kc.ipk
+Size: 10332
+SHA256sum: 8ca28c3da3b66945c8a21b664bd67de095c603e5ef13196739e35833ec406f02
+Description:  OpenWrt system log implementation
+
+Package: lsblk
+Version: 2.37-1
+Depends: libc, libblkid1, libmount1, libsmartcols1
+License: GPL-2.0-only
+Section: utils
+CPE-ID: cpe:/a:kernel:util-linux
+Architecture: mipsel_24kc
+Installed-Size: 55391
+Filename: lsblk_2.37-1_mipsel_24kc.ipk
+Size: 56308
+SHA256sum: 1384787c2e213fce29d26610c9c96ef5cdba6decf5cf905cc0b350513138b25b
+Description:  lsblk lists information about all or the specified block devices
+
+Package: lscpu
+Version: 2.37-1
+Depends: libc, libsmartcols1
+License: GPL-2.0-only
+Section: utils
+CPE-ID: cpe:/a:kernel:util-linux
+Architecture: mipsel_24kc
+Installed-Size: 37431
+Filename: lscpu_2.37-1_mipsel_24kc.ipk
+Size: 38322
+SHA256sum: cb04f57fb2fccb78dd70e470ed1897563077b4f6163adc58165db78401e7f40d
+Description:  lscpu displays information about the CPU architecture
+
+Package: luci-app-accesscontrol
+Version: 1-11
+Depends: libc
+Section: luci
+Architecture: all
+Installed-Size: 2744
+Filename: luci-app-accesscontrol_1-11_all.ipk
+Size: 3536
+SHA256sum: 800146721de99bc529e210c13d2504a64e181c73695ebd7a4deb6175d28cfb88
+Description:  LuCI Access Control Configuration
+
+Package: luci-app-argon-config
+Version: 0.9-20210904
+Depends: libc, luci-compat
+Section: luci
+Architecture: all
+Installed-Size: 3619
+Filename: luci-app-argon-config_0.9-20210904_all.ipk
+Size: 4457
+SHA256sum: 5ce86daed3c4229a032a06cfa579d020e20b780e14b02913ee0ac933ad0ce08a
+Description:  LuCI page for Argon Config
+
+Package: luci-app-arpbind
+Version: 1-3
+Depends: libc, ip
+Section: luci
+Architecture: all
+Installed-Size: 1988
+Filename: luci-app-arpbind_1-3_all.ipk
+Size: 2756
+SHA256sum: 6e1f5abacb009b4c4ff7314415c743d52ff5c1d3d0b67c75e963ba2688fb6492
+Description:  ARP Binding
+
+Package: luci-app-autoreboot
+Version: 1.0-8
+Depends: libc, luci
+Section: luci
+Architecture: all
+Installed-Size: 1289
+Filename: luci-app-autoreboot_1.0-8_all.ipk
+Size: 1992
+SHA256sum: 8d462242424c6788e56c6ec4b3f61c158fc5742779dff9403f1b248ebbfd460f
+Description:  LuCI support for Scheduled Reboot
+
+Package: luci-app-clash
+Version: v1.8.0
+Depends: libc, luci-base, wget, iptables, coreutils-base64, coreutils, coreutils-nohup, bash, ipset, libustream-openssl20201210, curl, jsonfilter, ca-certificates, iptables-mod-tproxy, kmod-tun
+Section: luci
+Architecture: all
+Installed-Size: 3004531
+Filename: luci-app-clash_v1.8.0_all.ipk
+Size: 2828860
+SHA256sum: 1bc8fd4e0149808e4174e01cf75f8f44abdf3258f4875da312789c934f9b3648
+Description:  Luci Interface for clash.
+
+Package: luci-app-diskman
+Version: v0.2.11-2
+Depends: libc, blkid, e2fsprogs, parted, smartmontools, btrfs-progs, lsblk
+License: AGPL-3.0
+Section: luci
+Architecture: all
+Installed-Size: 20441
+Filename: luci-app-diskman_v0.2.11-2_all.ipk
+Size: 21285
+SHA256sum: 2dc95a3b8ebf9486033640caf485ef06f229e37be21c23bb37c486782c43655c
+Description:  Disk Manager interface for LuCI
+
+Package: luci-app-filetransfer
+Version: 1-2
+Depends: libc, luci-lib-fs
+Section: luci
+Architecture: all
+Installed-Size: 2677
+Filename: luci-app-filetransfer_1-2_all.ipk
+Size: 3478
+SHA256sum: 10c57cca9470957875bebe9fcdc8a863878a080abdd64a95de8e3c644e3b9f9c
+Description:  LuCI page for IPK upload
+
+Package: luci-app-frpc
+Version: 1.4-2
+Depends: libc, wget, frpc
+Section: luci
+Architecture: all
+Installed-Size: 7633
+Filename: luci-app-frpc_1.4-2_all.ipk
+Size: 8428
+SHA256sum: 0f7196f33903eef062f93667cfb138bac134e529e00b52a1db4f667afb6b50db
+Description:  LuCI for FRPC
+
+Package: luci-app-guest-wifi
+Version: 1.0-1
+Depends: libc
+Section: luci
+Architecture: all
+Installed-Size: 3171
+Filename: luci-app-guest-wifi_1.0-1_all.ipk
+Size: 3908
+SHA256sum: 0fc277aab596c26d0c02d14fa3b304a955075956be7a1701d0b65dd500de3243
+Description:  luci-app-guest-wifi
+
+Package: luci-app-netdata
+Version: 1.0-3
+Depends: libc, netdata
+Section: luci
+Architecture: all
+Installed-Size: 642
+Filename: luci-app-netdata_1.0-3_all.ipk
+Size: 1351
+SHA256sum: a0d0fe930c8f5c0709306e41810f9440cbcc873a74f8e6acdaec9297273880e5
+Description:  LuCI support for Netdata
+
+Package: luci-app-ramfree
+Version: 1.0-1
+Depends: libc
+Section: luci
+Architecture: all
+Installed-Size: 421
+Filename: luci-app-ramfree_1.0-1_all.ipk
+Size: 1091
+SHA256sum: b609f9d8efb145231b4e6a8d2f8b4f667cda990f61c519fc0566595ec25653a8
+Description:  luci-app-ramfree
+
+Package: luci-app-serverchan
+Version: 2.01.4-9
+Depends: libc, iputils-arping, curl, jq
+Section: luci
+Architecture: all
+Installed-Size: 52787
+Filename: luci-app-serverchan_2.01.4-9_all.ipk
+Size: 53806
+SHA256sum: c2921887a4e21b930bceeaf815a675f601254d66652110cb5f960e8feacf548b
+Description:  LuCI support for serverchan
+
+Package: luci-app-smartdns
+Version: 1.2020.30-1
+Depends: libc, smartdns
+License: GPL-3.0-or-later
+Section: luci
+Architecture: all
+Installed-Size: 5356
+Filename: luci-app-smartdns_1.2020.30-1_all.ipk
+Size: 6170
+SHA256sum: 96167eb619a88022e97db2cab44c539a4853f59327abf5d5a412045b0ef21890
+Description:  Provides Luci for smartdns
+
+Package: luci-app-ttyd
+Version: 1.0-3
+Depends: libc, ttyd
+Section: luci
+Architecture: all
+Installed-Size: 743
+Filename: luci-app-ttyd_1.0-3_all.ipk
+Size: 1449
+SHA256sum: 2fcb22f00514f90d691d1d9bba137e5573b0210cbee182eb4193bf16a90cf3d4
+Description:  LuCI support for ttyd
+
+Package: luci-app-usb-printer
+Version: 1.0-2
+Depends: libc, p910nd, kmod-usb-printer
+Section: luci
+Architecture: all
+Installed-Size: 3158
+Filename: luci-app-usb-printer_1.0-2_all.ipk
+Size: 3930
+SHA256sum: c68fedd7c6f83407a3f78926cb1ac3097b04bbfc0dfd336e107acaa5530e018b
+Description:  USB Printer Share via TCP/IP
+
+Package: luci-app-vsftpd
+Version: 1.0-3
+Depends: libc, vsftpd-alt
+Section: luci
+Architecture: all
+Installed-Size: 2889
+Filename: luci-app-vsftpd_1.0-3_all.ipk
+Size: 3662
+SHA256sum: 7739d16ace5283db13578c31b5bca3fae06adfb0cb211d281d1d1f86370455af
+Description:  LuCI support for VSFTPD
+
+Package: luci-i18n-accesscontrol-zh-cn
+Version: 1-11
+Depends: libc, luci-app-accesscontrol
+Section: luci
+Architecture: all
+Installed-Size: 907
+Filename: luci-i18n-accesscontrol-zh-cn_1-11_all.ipk
+Size: 1747
+SHA256sum: cb65473652bb39b514500038cae0e719647e3810e96e44aa957439ef13364dd4
+Description:  Translation for luci-app-accesscontrol - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-argon-config-zh-cn
+Version: 0.9-20210904
+Depends: libc, luci-app-argon-config
+Section: luci
+Architecture: all
+Installed-Size: 1609
+Filename: luci-i18n-argon-config-zh-cn_0.9-20210904_all.ipk
+Size: 2496
+SHA256sum: ec19307ba5b231e773bd6f30d3d650b3b5c1f9d9d9c79bd05cc47b2b49b700a2
+Description:  Translation for luci-app-argon-config - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-arpbind-zh-cn
+Version: 1-3
+Depends: libc, luci-app-arpbind
+Section: luci
+Architecture: all
+Installed-Size: 618
+Filename: luci-i18n-arpbind-zh-cn_1-3_all.ipk
+Size: 1438
+SHA256sum: 7bbf67bca0694ead872ad538bc83557d44a4850c1a2629a9a464c70da3ebc9df
+Description:  Translation for luci-app-arpbind - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-autoreboot-zh-cn
+Version: 1.0-8
+Depends: libc, luci-app-autoreboot
+Section: luci
+Architecture: all
+Installed-Size: 559
+Filename: luci-i18n-autoreboot-zh-cn_1.0-8_all.ipk
+Size: 1383
+SHA256sum: 7e37498a033ca21c75855111c5161f610ad939a03dcee32bb2e2a459e7cc3990
+Description:  Translation for luci-app-autoreboot - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-bonding-zh-cn
+Version: git-21.332.59253-1a6ca93-1
+Depends: libc, luci-proto-bonding
+Section: luci
+Architecture: all
+Installed-Size: 3979
+Filename: luci-i18n-bonding-zh-cn_git-21.332.59253-1a6ca93-1_all.ipk
+Size: 4835
+SHA256sum: b1b85a7febf3204f39b4d096b65d53f38061ace569ab0ad4fee9858414182c6d
+Description:  Translation for luci-proto-bonding - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-diskman-zh-cn
+Version: v0.2.11-2
+Depends: libc, luci-app-diskman
+License: AGPL-3.0
+Section: luci
+Architecture: all
+Installed-Size: 2220
+Filename: luci-i18n-diskman-zh-cn_v0.2.11-2_all.ipk
+Size: 3105
+SHA256sum: b2e79935328c165ef7d2b7ab3c9f5b23ebd1a6a0c5ec15657f8bdc31de721695
+Description:  Translation for luci-app-diskman - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-filetransfer-zh-cn
+Version: 1-2
+Depends: libc, luci-app-filetransfer
+Section: luci
+Architecture: all
+Installed-Size: 867
+Filename: luci-i18n-filetransfer-zh-cn_1-2_all.ipk
+Size: 1710
+SHA256sum: 9dc97e4326058e68ebc5ae98c5fb4b40a881573814a6f044f25cc9ed1742a74f
+Description:  Translation for luci-app-filetransfer - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-frpc-zh-cn
+Version: 1.4-2
+Depends: libc, luci-app-frpc
+Section: luci
+Architecture: all
+Installed-Size: 3418
+Filename: luci-i18n-frpc-zh-cn_1.4-2_all.ipk
+Size: 4220
+SHA256sum: 7f285f862e271fcb26955650cfc381f3bbec79081094fe4fc7367c84254e6639
+Description:  Translation for luci-app-frpc - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-guest-wifi-zh-cn
+Version: 1.0-1
+Depends: libc, luci-app-guest-wifi
+Section: luci
+Architecture: all
+Installed-Size: 1310
+Filename: luci-i18n-guest-wifi-zh-cn_1.0-1_all.ipk
+Size: 2152
+SHA256sum: eea9b19885080d22a6fef793537b47a5f39acb266e755c35ebd33b721f0c2da5
+Description:  Translation for luci-app-guest-wifi - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-netdata-zh-cn
+Version: 1.0-3
+Depends: libc, luci-app-netdata
+Section: luci
+Architecture: all
+Installed-Size: 420
+Filename: luci-i18n-netdata-zh-cn_1.0-3_all.ipk
+Size: 1239
+SHA256sum: d92560b9121f44230bab366ae711b9f60a4a1dd6ba3796fbccaa86248e08245d
+Description:  Translation for luci-app-netdata - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-ramfree-zh-cn
+Version: 1.0-1
+Depends: libc, luci-app-ramfree
+Section: luci
+Architecture: all
+Installed-Size: 426
+Filename: luci-i18n-ramfree-zh-cn_1.0-1_all.ipk
+Size: 1247
+SHA256sum: 5b76f728eafee66c76f7857bf8f92d2b3ac069002dee18c6abc98c74ebcde9c4
+Description:  Translation for luci-app-ramfree - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-smartdns-zh-cn
+Version: 1.2020.30-1
+Depends: libc, luci-app-smartdns
+License: GPL-3.0-or-later
+Section: luci
+Architecture: all
+Installed-Size: 3132
+Filename: luci-i18n-smartdns-zh-cn_1.2020.30-1_all.ipk
+Size: 3989
+SHA256sum: 82c701a743a5f5234e15ffa68da9112edce950079834d1e9f2efdfda167fb1e0
+Description:  Translation for luci-app-smartdns - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-ttyd-zh-cn
+Version: 1.0-3
+Depends: libc, luci-app-ttyd
+Section: luci
+Architecture: all
+Installed-Size: 421
+Filename: luci-i18n-ttyd-zh-cn_1.0-3_all.ipk
+Size: 1246
+SHA256sum: 554c555a98fe9cb7d53e25dfa0c6d0812491c302f8f23fde2822c137e1d4de23
+Description:  Translation for luci-app-ttyd - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-usb-printer-zh-cn
+Version: 1.0-2
+Depends: libc, luci-app-usb-printer
+Section: luci
+Architecture: all
+Installed-Size: 888
+Filename: luci-i18n-usb-printer-zh-cn_1.0-2_all.ipk
+Size: 1736
+SHA256sum: 8f14105e1f2f35a46afde67d66f51689543f467c3f0fc22a18dd3d34f8619961
+Description:  Translation for luci-app-usb-printer - 简体中文 (Simplified Chinese)
+
+Package: luci-i18n-vsftpd-zh-cn
+Version: 1.0-3
+Depends: libc, luci-app-vsftpd
+Section: luci
+Architecture: all
+Installed-Size: 2218
+Filename: luci-i18n-vsftpd-zh-cn_1.0-3_all.ipk
+Size: 3062
+SHA256sum: ea6f070788f18bb96ec0dcdee6ae967addddb9fb52a9da53047eaecfaea512f4
+Description:  Translation for luci-app-vsftpd - 简体中文 (Simplified Chinese)
+
+Package: luci-lib-fs
+Version: 1.0-1
+Depends: libc, luci, luci-lib-nixio
+Section: lang
+Architecture: all
+Installed-Size: 2343
+Filename: luci-lib-fs_1.0-1_all.ipk
+Size: 3020
+SHA256sum: 60b3f42ed1ff6e62e0d1852ccd6268eafb7763716f554030ebf99d8af3e68a12
+Description:  luci-lib-fs
+
+Package: luci-proto-bonding
+Version: git-21.332.59253-1a6ca93-1
+Depends: libc, proto-bonding
+Section: luci
+Architecture: all
+Installed-Size: 4784
+Filename: luci-proto-bonding_git-21.332.59253-1a6ca93-1_all.ipk
+Size: 5533
+SHA256sum: 21cc944f3f32ccc40a4f9801d57427bf8beb15cef8e28d6f91492d617a73caf5
+Description:  Support for Link Aggregation (Channel Bonding)
+
+Package: luci-theme-argon
+Version: 1.7.2-20210309
+Depends: libc
+Section: luci
+Architecture: all
+Installed-Size: 415454
+Filename: luci-theme-argon_1.7.2-20210309_all.ipk
+Size: 416221
+SHA256sum: 55ce99bf56af320cdc82cf07a48aced8501554b62f9944910187486ef474ecd8
+Description:  Argon Theme
+
+Package: miniupnpd
+Version: 2.0.20170421-3
+Depends: libc, iptables, libip4tc2, libuuid1
+License: BSD-3-Clause
+Section: net
+Architecture: mipsel_24kc
+Installed-Size: 47331
+Filename: miniupnpd_2.0.20170421-3_mipsel_24kc.ipk
+Size: 48290
+SHA256sum: add3b2805c190cfc0498f2518e608e10c2a326937b770b88de90e3e67ebc06d4
+Description:  Lightweight UPnP IGD, NAT-PMP & PCP daemon
+
+Package: netifd
+Version: 2021-06-04-50381d0a-1
+Depends: libc, libuci20130104, libnl-tiny1, libubus20210603, ubus, ubusd, jshn, libubox20210516
+License: GPL-2.0
+Section: base
+Architecture: mipsel_24kc
+Installed-Size: 73920
+Filename: netifd_2021-06-04-50381d0a-1_mipsel_24kc.ipk
+Size: 74754
+SHA256sum: 4da630545672f03389ec997efb9d11274ba4bf78bab9eeb66f557fd0bb4d2872
+Description:  OpenWrt Network Interface Configuration Daemon
+
+Package: odhcp6c
+Version: 2021-01-09-53f07e90-18
+Depends: libc, libubox20210516
+License: GPL-2.0
+Section: net
+Architecture: mipsel_24kc
+Installed-Size: 23840
+Filename: odhcp6c_2021-01-09-53f07e90-18_mipsel_24kc.ipk
+Size: 24635
+SHA256sum: d09565c8e10f824f09ddaed3c98e9201ca31c293a754663080525123adf36a2d
+Description:  Embedded DHCPv6-client for OpenWrt
+
+Package: odhcpd-ipv6only
+Version: 2021-06-19-564d25e5-1
+Depends: libc, libubox20210516, libuci20130104, libubus20210603, libnl-tiny1
+License: GPL-2.0
+Section: net
+Architecture: mipsel_24kc
+Installed-Size: 37032
+Filename: odhcpd-ipv6only_2021-06-19-564d25e5-1_mipsel_24kc.ipk
+Size: 38069
+SHA256sum: 659d57ecf65f51ffbb6897163bfae12342b6ce2791de756dd33d906772991c40
+Description:  odhcpd is a daemon for serving and relaying IP management protocols to
+ configure clients and downstream routers. It tries to follow the RFC 6204
+ requirements for IPv6 home routers.
+ 
+ This is a variant providing server services for RA, stateless and stateful
+ DHCPv6,  prefix delegation and can be used to relay RA, DHCPv6 and NDP between
+ routed (non-bridged) interfaces in case no delegated prefixes are available.
+
+Package: openssl-util
+Version: 1.1.1l-1
+Depends: libc, libopenssl1.1, libopenssl-conf
+License: OpenSSL
+Section: utils
+CPE-ID: cpe:/a:openssl:openssl
+Architecture: mipsel_24kc
+Installed-Size: 256660
+Filename: openssl-util_1.1.1l-1_mipsel_24kc.ipk
+Size: 255187
+SHA256sum: c01e7a8dd534f290178e04cc2f49c706520a494a5aa2129ace0176bb6ba446a0
+Description:  The OpenSSL Project is a collaborative effort to develop a robust,
+ commercial-grade, full-featured, and Open Source toolkit implementing the
+ Transport Layer Security (TLS) protocol as well as a full-strength
+ general-purpose cryptography library.
+ This package contains the OpenSSL command-line utility.
+
+Package: openwrt-keyring
+Version: 2021-02-20-49283916-2
+Depends: libc
+Provides: lede-keyring
+License: GPL-2.0
+Section: base
+Architecture: mipsel_24kc
+Installed-Size: 316
+Filename: openwrt-keyring_2021-02-20-49283916-2_mipsel_24kc.ipk
+Size: 1101
+SHA256sum: b2ecabbce2f8cdb7f50a5f910b1bece2f9053bc235be00d5a22f3204ba862550
+Description:  The keyring of with the developer using and gpg public keys.
+
+Package: opkg
+Version: 2021-06-13-1bf042dd-1
+Depends: libc, uclient-fetch, libpthread, libubox20210516
+License: GPL-2.0
+Section: base
+Essential: yes
+Architecture: mipsel_24kc
+Installed-Size: 58309
+Filename: opkg_2021-06-13-1bf042dd-1_mipsel_24kc.ipk
+Size: 59427
+SHA256sum: fd2c806dac34522167148ac4bdd2548b982cbf710c5ed9d3c6ec828ad414fb9f
+Description:  Lightweight package management system
+ opkg is the opkg Package Management System, for handling
+ installation and removal of packages on a system. It can
+ recursively follow dependencies and download all packages
+ necessary to install a particular package.
+ 
+ opkg knows how to install both .ipk and .deb packages.
+
+Package: ppp-mod-pppoe
+Version: 2.4.9.git-2021-01-04-6
+Depends: libc, kmod-pppoe
+License: BSD-4-Clause
+Section: net
+CPE-ID: cpe:/a:samba:ppp
+Architecture: mipsel_24kc
+Installed-Size: 9801
+Filename: ppp-mod-pppoe_2.4.9.git-2021-01-04-6_mipsel_24kc.ipk
+Size: 10612
+SHA256sum: ded9df626535ae09e63286c766b2aefa687674ebc5c722d7d7ee0a6206e0cf10
+Description:  This package contains a PPPoE (PPP over Ethernet) plugin for ppp.
+
+Package: ppp
+Version: 2.4.9.git-2021-01-04-6
+Depends: libc, kmod-ppp, libpthread, shellsync, kmod-mppe
+License: BSD-4-Clause
+Section: net
+CPE-ID: cpe:/a:samba:ppp
+Architecture: mipsel_24kc
+Installed-Size: 115601
+Filename: ppp_2.4.9.git-2021-01-04-6_mipsel_24kc.ipk
+Size: 116221
+SHA256sum: 63707f08bf8fdc2caa5997f236bd28feca288988cfe4abf00653cce71060af69
+Description:  This package contains the PPP (Point-to-Point Protocol) daemon.
+
+Package: procd
+Version: 2021-08-13-9f233f55-1
+Depends: libc, ubusd, ubus, libjson-script20210516, ubox, libubox20210516, libubus20210603, libblobmsg-json20210516, libjson-c5, jshn
+Conflicts: procd-selinux
+License: GPL-2.0
+Section: base
+Architecture: mipsel_24kc
+Installed-Size: 50903
+Filename: procd_2021-08-13-9f233f55-1_mipsel_24kc.ipk
+Size: 51668
+SHA256sum: 4e5d845ac783a23ffe7a79ab320a3543ec16e0f72fb35eeea4af496b27e552e4
+Description:  OpenWrt system process manager
+
+Package: relayd
+Version: 2020-04-25-f4d759be-1
+Depends: libc, libubox20210516
+License: GPL-2.0
+Section: net
+Architecture: mipsel_24kc
+Installed-Size: 9003
+Filename: relayd_2020-04-25-f4d759be-1_mipsel_24kc.ipk
+Size: 9780
+SHA256sum: cd27fa5337b44c4f162cfaa00f2aa87acf88150833d11b4d691c2e3f657f1f5c
+Description:  Transparent routing / relay daemon
+
+Package: resize2fs
+Version: 1.45.6-2
+Depends: libc, e2fsprogs
+License: GPL-2.0
+Section: utils
+CPE-ID: cpe:/a:e2fsprogs_project:e2fsprogs
+Architecture: mipsel_24kc
+Installed-Size: 21969
+Filename: resize2fs_1.45.6-2_mipsel_24kc.ipk
+Size: 22583
+SHA256sum: 6355855c4bd0972ffaca4da04f2493121ec793796d3fc5d606c49d9bcb145b18
+Description:  Ext2 Filesystem resize utility
+
+Package: resolveip
+Version: 2
+Depends: libc
+License: GPL-2.0
+Section: utils
+Architecture: mipsel_24kc
+Installed-Size: 1740
+Filename: resolveip_2_mipsel_24kc.ipk
+Size: 2643
+SHA256sum: 343c8326aef7fc3f86ba84cf831bb204e76edba10954e86aa22cacfe2b667271
+Description:  This package contains the small resolveip utility which
+ can be used by scripts to turn host names into numeric
+ IP addresses. It supports IPv4 and IPv6 resolving and
+ has a configurable timeout to guarantee a certain maximum
+ runtime in case of slow or defunct DNS servers.
+
+Package: rpcd
+Version: 2021-07-13-1fa35765-1
+Depends: libc, libubus20210603, libubox20210516, libuci20130104, libblobmsg-json20210516, libjson-c5
+License: ISC
+Section: utils
+Architecture: mipsel_24kc
+Installed-Size: 22804
+Filename: rpcd_2021-07-13-1fa35765-1_mipsel_24kc.ipk
+Size: 23616
+SHA256sum: 598d2f85923af9e34a71fc08606b8cfae0d21729c887b1a771d7cf0f999a8342
+Description:  This package provides the UBUS RPC backend server to expose various
+ functionality to frontend programs via JSON-RPC.
+
+Package: samba36-server
+Version: 3.6.25-15
+Depends: libc
+License: GPL-3.0
+Section: net
+CPE-ID: cpe:/a:samba:samba
+Architecture: mipsel_24kc
+Installed-Size: 798100
+Filename: samba36-server_3.6.25-15_mipsel_24kc.ipk
+Size: 779475
+SHA256sum: beacdacc937ebc443c61cb0ced3bc149beeb33a83981483552b909d91cde34d2
+Description:  The Samba software suite is a collection of programs that implements the
+ SMB protocol for UNIX systems, allowing you to serve files and printers to
+ Windows, NT, OS/2 and DOS clients. This protocol is sometimes also referred
+ to as the LanManager or Netbios protocol.
+
+Package: shellsync
+Version: 0.2-2
+Depends: libc, libpthread, kmod-macvlan
+Section: opt
+Architecture: mipsel_24kc
+Installed-Size: 2023
+Filename: shellsync_0.2-2_mipsel_24kc.ipk
+Size: 2790
+SHA256sum: 1b0ae4328ffe33d2d5c825c2078ec4601fab84e14cca573672b561241f98ec02
+Description:  A tool to sync different shell scripts.Based on syncppp patch by morfast.
+
+Package: smartdns
+Version: 1.2020.30-1
+Depends: libc, libpthread, libopenssl1.1
+License: GPL-3.0-or-later
+Section: net
+Architecture: mipsel_24kc
+Installed-Size: 64013
+Filename: smartdns_1.2020.30-1_mipsel_24kc.ipk
+Size: 64801
+SHA256sum: b265453cf3d2d76114a977747ca85b8076febf584d9eb970660316428283e485
+Description:  SmartDNS is a local DNS server which accepts DNS query requests from local network clients,
+ gets DNS query results from multiple upstream DNS servers concurrently, and returns the fastest IP to clients.
+ Unlike dnsmasq's all-servers, smartdns returns the fastest IP. 
+
+Package: swap-utils
+Version: 2.37-1
+Depends: libc, librt, libblkid1
+License: GPL-2.0-only
+Section: utils
+CPE-ID: cpe:/a:kernel:util-linux
+Architecture: mipsel_24kc
+Installed-Size: 37942
+Filename: swap-utils_2.37-1_mipsel_24kc.ipk
+Size: 38829
+SHA256sum: bf1bef9d723dece2a9e0e0f5203eb6115345e5319dd775b43fb55e18e5a70ac9
+Description:  contains: mkswap, swaplabel
+
+Package: swconfig
+Version: 12
+Depends: libc, libuci20130104, libnl-tiny1
+License: GPL-2.0
+Section: base
+Architecture: mipsel_24kc
+Installed-Size: 7308
+Filename: swconfig_12_mipsel_24kc.ipk
+Size: 8111
+SHA256sum: a6b506a4a4ba419e61bb31ff0c34abbbae971a3dfe72f0e90ea12d3108dab8df
+Description:  Switch configuration utility
+
+Package: sysfsutils
+Version: 2.1.0-3
+Depends: libc, libsysfs2
+License: LGPL-2.1
+Section: utils
+Architecture: mipsel_24kc
+Installed-Size: 7512
+Filename: sysfsutils_2.1.0-3_mipsel_24kc.ipk
+Size: 8369
+SHA256sum: e606bfa4143b08342d8b40c95acc8fd6aecb1bfe284b543dff5fea8ce3a24779
+Description:  A utility built upon libsysfs that lists devices by bus, class, and topology.
+
+Package: tcping
+Version: 0.3-1
+Depends: libc
+License: GPL-2.0-only
+Section: net
+Architecture: mipsel_24kc
+Installed-Size: 3883
+Filename: tcping_0.3-1_mipsel_24kc.ipk
+Size: 4602
+SHA256sum: 1b3d77e5ff9df7f4ebbd0512e964387a4adbbae87688ac12e7904c545f4c9c57
+Description:  tcping measures the latency of a tcp-connection
+
+Package: terminfo
+Version: 6.2-2
+Depends: libc
+License: MIT
+Section: libs
+Architecture: mipsel_24kc
+Installed-Size: 6424
+Filename: terminfo_6.2-2_mipsel_24kc.ipk
+Size: 7103
+SHA256sum: 05b3a13bfb76a9050327789eca81601d2ee6ba3e4e5619139192ef705e2c6422
+Description:  Terminal Info Database (ncurses)
+
+Package: ubox
+Version: 2020-10-25-9ef88681-2
+Depends: libc, libubox20210516, ubusd, ubus, libubus20210603, libuci20130104
+Alternatives: 100:/sbin/rmmod:/sbin/kmodloader, 100:/sbin/insmod:/sbin/kmodloader, 100:/sbin/lsmod:/sbin/kmodloader, 100:/sbin/modinfo:/sbin/kmodloader, 100:/sbin/modprobe:/sbin/kmodloader
+License: GPL-2.0
+Section: base
+Architecture: mipsel_24kc
+Installed-Size: 13310
+Filename: ubox_2020-10-25-9ef88681-2_mipsel_24kc.ipk
+Size: 14149
+SHA256sum: 8049b49ae413a0e6dd10b80a1849a577344d07f46ff2e69b7da699360db43147
+Description:  OpenWrt system helper toolbox
+
+Package: uclient-fetch
+Version: 2021-05-14-6a6011df-1
+Depends: libc, libuclient20201210
+Provides: wget
+Alternatives: 200:/usr/bin/wget:/bin/uclient-fetch
+License: ISC
+Section: net
+Architecture: mipsel_24kc
+Installed-Size: 7086
+Filename: uclient-fetch_2021-05-14-6a6011df-1_mipsel_24kc.ipk
+Size: 7906
+SHA256sum: f7f569122e3d1b4089c88b55332b522046cabfc94a1af4016ee2c26cc954b958
+Description:  Tiny wget replacement using libuclient
+
+Package: uhttpd-mod-ubus
+Version: 2021-03-21-15346de8-1
+Depends: libc, uhttpd, libubus20210603, libblobmsg-json20210516
+License: ISC
+Section: net
+Architecture: mipsel_24kc
+Installed-Size: 7748
+Filename: uhttpd-mod-ubus_2021-03-21-15346de8-1_mipsel_24kc.ipk
+Size: 8609
+SHA256sum: e2ec8b35deceeffca0e4963981e6c186b1f697a7887bee9b96258e497cf08e75
+Description:  The ubus plugin adds a HTTP/JSON RPC proxy for ubus and publishes the
+ session.* namespace and procedures.
+
+Package: uhttpd
+Version: 2021-03-21-15346de8-1
+Depends: libc, libubox20210516, libblobmsg-json20210516, libjson-script20210516, libjson-c5
+License: ISC
+Section: net
+Architecture: mipsel_24kc
+Installed-Size: 27348
+Filename: uhttpd_2021-03-21-15346de8-1_mipsel_24kc.ipk
+Size: 28072
+SHA256sum: cac35541e04084c7afa25587f79019dd536e926b33caba4cdf0f79b09d2d4cc4
+Description:  uHTTPd is a tiny single threaded HTTP server with TLS, CGI and Lua
+ support. It is intended as a drop-in replacement for the Busybox
+ HTTP daemon.
+
+Package: urandom-seed
+Version: 3
+Depends: libc, getrandom
+License: GPL-2.0-only
+Section: base
+Architecture: mipsel_24kc
+Installed-Size: 833
+Filename: urandom-seed_3_mipsel_24kc.ipk
+Size: 1572
+SHA256sum: 60eb72e5208d8ef97b71e2b8b2547d2758cc2d1db1f03dd628e6d8d77e519978
+Description:  /etc/urandom.seed handling for OpenWrt
+
+Package: urngd
+Version: 2020-01-21-c7f7b6b6-2
+Depends: libc, libubox20210516
+License: GPL-2.0 BSD-3-Clause
+Section: utils
+Architecture: mipsel_24kc
+Installed-Size: 4855
+Filename: urngd_2020-01-21-c7f7b6b6-2_mipsel_24kc.ipk
+Size: 5841
+SHA256sum: 2a757e654225527090f02b88acdbdc87fa569fedc41d686b9eff5660a1c6275f
+Description:  urngd is OpenWrt's micro non-physical true random number generator based on
+ timing jitter.
+ 
+ Using the Jitter RNG core, the rngd provides an entropy source that feeds into
+ the Linux /dev/random device if its entropy runs low. It updates the
+ /dev/random entropy estimator such that the newly provided entropy unblocks
+ /dev/random.
+ 
+ The seeding of /dev/random also ensures that /dev/urandom benefits from
+ entropy. Especially during boot time, when the entropy of Linux is low, the
+ Jitter RNGd provides a source of sufficient entropy.
+
+Package: usign
+Version: 2020-05-23-f1f65026-1
+Depends: libc, libubox20210516
+License: ISC
+Section: base
+Architecture: mipsel_24kc
+Installed-Size: 11207
+Filename: usign_2020-05-23-f1f65026-1_mipsel_24kc.ipk
+Size: 11943
+SHA256sum: 5168f7184a0657a5d614a0f3ef6a9a608b0d02478ff00b405a7edf7a3f6020cc
+Description:  OpenWrt signature verification utility
+
+Package: vsftpd-alt
+Version: 3.0.5-1
+Depends: libc, libuci20130104
+License: GPLv2
+Section: net
+Architecture: mipsel_24kc
+Installed-Size: 37544
+Filename: vsftpd-alt_3.0.5-1_mipsel_24kc.ipk
+Size: 38451
+SHA256sum: bb2761e6067032177ada41a29f86f0b798fa51f0183a4fab6b4f441fb2dde965
+Description:  A fast and secure FTP server (with aio support)
+
+Package: whereis
+Version: 2.37-1
+Depends: libc, librt
+License: GPL-2.0-only
+Section: utils
+CPE-ID: cpe:/a:kernel:util-linux
+Architecture: mipsel_24kc
+Installed-Size: 8310
+Filename: whereis_2.37-1_mipsel_24kc.ipk
+Size: 9188
+SHA256sum: ab51f3c96d883671ac1d749d427605abfa1664a2c5594034273788508c6e6f9a
+Description:  whereis locates source/binary and manuals sections for specified files
+
+Package: wireless-regdb
+Version: 2021.04.21-2
+Depends: libc
+Section: firmware
+Architecture: all
+Installed-Size: 1968
+Filename: wireless-regdb_2021.04.21-2_all.ipk
+Size: 2713
+SHA256sum: 1e0021f492c5a8c66237322018aeed6a61e04e6d107b1b58d6d7783ac86e3f95
+Description:  Wireless Regulatory Database
+
+Package: wpad-openssl
+Version: 2021-05-22-b102f19b-1
+Depends: libc, libnl-tiny1, hostapd-common, libubus20210603, libopenssl1.1
+Conflicts: hostapd, hostapd-basic, hostapd-basic-openssl, hostapd-basic-wolfssl, hostapd-mini, hostapd-openssl, hostapd-wolfssl, wpad, wpad-mesh-openssl, wpad-mesh-wolfssl, wpad-basic, wpad-basic-openssl, wpad-basic-wolfssl, wpad-mini, wpad, wpad-mesh-openssl, wpad-mesh-wolfssl, wpad-basic, wpad-basic-openssl, wpad-basic-wolfssl, wpad-mini
+Provides: hostapd, wpa-supplicant
+License: BSD-3-Clause
+Section: net
+CPE-ID: cpe:/a:w1.fi:hostapd
+Architecture: mipsel_24kc
+Installed-Size: 600498
+Filename: wpad-openssl_2021-05-22-b102f19b-1_mipsel_24kc.ipk
+Size: 600820
+SHA256sum: 2101098f7dd6a073b580ae0939755fe526dbed88dcfb56262cf67e7af4c703a9
+Description:  This package contains a full featured IEEE 802.1x/WPA/EAP/RADIUS
+ Authenticator and Supplicant
+
+Package: zlib
+Version: 1.2.11-3
+Depends: libc
+License: Zlib
+Section: libs
+CPE-ID: cpe:/a:gnu:zlib
+Architecture: mipsel_24kc
+Installed-Size: 47678
+Filename: zlib_1.2.11-3_mipsel_24kc.ipk
+Size: 48546
+SHA256sum: 82ddd63e8c38615094f48750acf22c33800442af719b8dec5bcb92d2ea681007
+Description:  zlib is a lossless data-compression library.
+ This package includes the shared library.
+
