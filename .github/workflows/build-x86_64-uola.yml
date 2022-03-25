@@ -238,20 +238,20 @@ jobs:
           path: ${{ env.ARTIFACT_BUILDINFO }}
 
     # 上传固件包文件
-    - name: 上传固件包文件
-      uses: actions/upload-artifact@v2
-      if: steps.organize.outputs.status == 'success' && !cancelled()
-      with:
-        name: Uola_package
-        path: ${{ env.ARTIFACT_PACKAGE }}
+    #- name: 上传固件包文件
+    #  uses: actions/upload-artifact@v2
+    #  if: steps.organize.outputs.status == 'success' && !cancelled()
+    #  with:
+    #    name: Uola_package
+    #    path: ${{ env.ARTIFACT_PACKAGE }}
     
     # 上传固件
-    - name: 上传固件
-      uses: actions/upload-artifact@v2
-      if: steps.organize.outputs.status == 'success' && !cancelled()
-      with:
-        name: Uola_firmware
-        path: ${{ env.FIRMWARE }}
+    #- name: 上传固件
+    #  uses: actions/upload-artifact@v2
+    #  if: steps.organize.outputs.status == 'success' && !cancelled()
+    #  with:
+    #    name: Uola_firmware
+    #    path: ${{ env.FIRMWARE }}
     
     # 上传固件到奶牛快传
     #- name: 上传固件到奶牛快传
@@ -265,15 +265,15 @@ jobs:
     #    echo "::set-output name=COWTRANSFER_URL::$(cat cowtransfer.log | grep https | cut -f3 -d" ")"
     
     # 上传固件到WeTransfer
-    - name: 上传固件到WeTransfer
-      id: wetransfer
-      if: steps.organize.outputs.status == 'success' && env.UPLOAD_WETRANSFER == 'true' && !cancelled()
-      run: |
-        curl -fsSL git.io/file-transfer | sh
-        ./transfer wet -s -p 16 --no-progress ${FIRMWARE} 2>&1 | tee wetransfer.log
-        echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
-        echo "WETRANSFER_URL=$(cat wetransfer.log | grep https | cut -f3 -d" ")" >> $GITHUB_ENV 
-        echo "::set-output name=WETRANSFER_URL::$(cat wetransfer.log | grep https | cut -f3 -d" ")"
+    #- name: 上传固件到WeTransfer
+    #  id: wetransfer
+    #  if: steps.organize.outputs.status == 'success' && env.UPLOAD_WETRANSFER == 'true' && !cancelled()
+    #  run: |
+    #    curl -fsSL git.io/file-transfer | sh
+    #    ./transfer wet -s -p 16 --no-progress ${FIRMWARE} 2>&1 | tee wetransfer.log
+    #    echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
+    #    echo "WETRANSFER_URL=$(cat wetransfer.log | grep https | cut -f3 -d" ")" >> $GITHUB_ENV 
+    #    echo "::set-output name=WETRANSFER_URL::$(cat wetransfer.log | grep https | cut -f3 -d" ")"
     
     # 发行固件
     - name: 发行固件
