@@ -238,20 +238,20 @@ jobs:
           path: ${{ env.ARTIFACT_BUILDINFO }}
 
     # 上传固件包文件
-    #- name: 上传固件包文件
-    #  uses: actions/upload-artifact@v2
-    #  if: steps.organize.outputs.status == 'success' && !cancelled()
-    #  with:
-    #    name: Uola_package
-    #    path: ${{ env.ARTIFACT_PACKAGE }}
+    - name: 上传固件包文件
+      uses: actions/upload-artifact@v2
+      if: steps.organize.outputs.status == 'success' && !cancelled()
+      with:
+        name: Uola_package
+        path: ${{ env.ARTIFACT_PACKAGE }}
     
     # 上传固件
-    #- name: 上传固件
-    #  uses: actions/upload-artifact@v2
-    #  if: steps.organize.outputs.status == 'success' && !cancelled()
-    #  with:
-    #    name: Uola_firmware
-    #    path: ${{ env.FIRMWARE }}
+    - name: 上传固件
+      uses: actions/upload-artifact@v2
+      if: steps.organize.outputs.status == 'success' && !cancelled()
+      with:
+        name: Uola_firmware
+        path: ${{ env.FIRMWARE }}
     
     # 上传固件到奶牛快传
     #- name: 上传固件到奶牛快传
