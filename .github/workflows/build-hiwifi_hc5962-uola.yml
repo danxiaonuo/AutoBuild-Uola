@@ -19,11 +19,11 @@ on:
         required: true
         default: '编译Hiwifi_Hc5962 Uola固件'
   # 定时触发编译(每天早5点)
-  #schedule:
-  #  - cron: 0 21 * * 3
+  schedule:
+    - cron: 0 21 * * 3
   # 点赞☆Star触发编译
-  #watch:
-  #   types: [started]
+  watch:
+     types: [started]
 
 # 任务集
 jobs:
