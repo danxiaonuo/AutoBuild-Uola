@@ -248,11 +248,15 @@ jobs:
     
     # 上传固件
     - name: 上传固件
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
         name: Uola_firmware
-        path: ${{ env.FIRMWARE }}
+        path: |
+           ${{ env.ARTIFACT_FIRMWARE }}/config.buildinfo
+           ${{ env.ARTIFACT_FIRMWARE }}/immortalwrt-${{ env.TARGET }}-${{ env.SUBTARGET }}-${{ env.DEVICE_NAME }}-generic.manifest
+           ${{ env.ARTIFACT_FIRMWARE }}/immortalwrt-${{ env.TARGET }}-${{ env.SUBTARGET }}-${{ env.DEVICE_NAME }}-ext4-combined-efi.img.gz
+           ${{ env.ARTIFACT_FIRMWARE }}/immortalwrt-${{ env.TARGET }}-${{ env.SUBTARGET }}-${{ env.DEVICE_NAME }}-squashfs-combined-efi.img.gz
     
     # 上传固件到奶牛快传
     #- name: 上传固件到奶牛快传
