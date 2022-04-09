@@ -212,7 +212,7 @@ jobs:
     - name: 编译 & 上传 Docker Image 至 Dockerhub
       run: |
           cd ${FIRMWARE}
-          docker import openwrt-$TARGET-$SUBTARGET-$DEVICE_NAME-rootfs.tar.gz danxiaonuo/uola:${{matrix.devices}}
+          docker import immortalwrt-$TARGET-$SUBTARGET-$DEVICE_NAME-rootfs.tar.gz danxiaonuo/uola:${{matrix.devices}}
           docker login -u danxiaonuo -p ${{ secrets.DOCKER_HUB_PWD }}
           docker push danxiaonuo/uola:${{matrix.devices}}
     
