@@ -299,9 +299,9 @@ jobs:
             ${{ github.event.commits[0].message }}
         files: |
            ${{ env.ARTIFACT_FIRMWARE }}/config.buildinfo
-           ${{ env.ARTIFACT_FIRMWARE }}/openwrt-${{ env.TARGET }}-${{ env.SUBTARGET }}-${{ env.DEVICE_NAME }}-generic.manifest
-           ${{ env.ARTIFACT_FIRMWARE }}/openwrt-${{ env.TARGET }}-${{ env.SUBTARGET }}-${{ env.DEVICE_NAME }}-ext4-combined-efi.img.gz
-           ${{ env.ARTIFACT_FIRMWARE }}/openwrt-${{ env.TARGET }}-${{ env.SUBTARGET }}-${{ env.DEVICE_NAME }}-squashfs-combined-efi.img.gz
+           ${{ env.ARTIFACT_FIRMWARE }}/immortalwrt-${{ env.TARGET }}-${{ env.SUBTARGET }}-${{ env.DEVICE_NAME }}-generic.manifest
+           ${{ env.ARTIFACT_FIRMWARE }}/immortalwrt-${{ env.TARGET }}-${{ env.SUBTARGET }}-${{ env.DEVICE_NAME }}-ext4-combined-efi.img.gz
+           ${{ env.ARTIFACT_FIRMWARE }}/immortalwrt-${{ env.TARGET }}-${{ env.SUBTARGET }}-${{ env.DEVICE_NAME }}-squashfs-combined-efi.img.gz
        
     # 微信通知
     - name: 微信通知
