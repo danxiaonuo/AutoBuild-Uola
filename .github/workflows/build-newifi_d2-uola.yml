@@ -22,8 +22,8 @@ on:
   #schedule:
   #  - cron: 0 21 * * 3
   # 点赞☆Star触发编译
-  #watch:
-  #   types: [started]
+  watch:
+     types: [started]
 
 # 任务集
 jobs:
