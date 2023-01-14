@@ -82,7 +82,7 @@ jobs:
       run: |
         sudo -E docker rmi -f $(docker images -q)
         sudo -E rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
-        sudo -E apt-get -qqy purge azure-cli ghc* zulu* llvm* firefox google* dotnet* powershell openjdk* mysql* php* android*
+        sudo -E apt-get -qqy purge azure-cli ghc* zulu* llvm* firefox google* powershell openjdk* mysql* php* android*
         sudo -E apt-get update -qqy && sudo -E apt-get upgrade -qqy
         sudo -E apt-get install -qqy git sudo wget curl zsh vim nano tmux tree htop screen rsync gnupg ca-certificates uuid-runtime tzdata openssh-server lrzsz xz-utils
         sudo -E apt-get install -qqy $(curl -fsSL is.gd/depends_ubuntu_2204) tree
