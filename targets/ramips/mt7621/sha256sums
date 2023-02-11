@@ -1,0 +1,5 @@
+3bbfc18e9532f5266be5be15d17be128724af15e4b42e961d53d19b104dc43ed *config.buildinfo
+717243dee1e8e103fa73a3245644fadfb27d170afb7fcc5e6dbb735af8e8eec4 *immortalwrt-ramips-mt7621-d-team_newifi-d2-initramfs-kernel.bin
+0de9640831a6cc49073e241f0c9095d9f61a760a7e7480721a5dd0d4a9ad912d *immortalwrt-ramips-mt7621-d-team_newifi-d2-rootfs.tar.gz
+597e1e8b1f12112db313ed021ab7db74192d13753c2241af41ae102ef9c7f859 *immortalwrt-ramips-mt7621-d-team_newifi-d2-squashfs-sysupgrade.bin
+d702eb9d9c62fc2c7372114f44953a6864488fd6e06e277e3bf1e0c1526dcd0e *immortalwrt-ramips-mt7621-d-team_newifi-d2.manifest
