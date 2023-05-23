@@ -33,8 +33,6 @@
 | -- DIY_SH=""  | 定义脚本文件 |
 | -- UPLOAD_BIN_DIR="false" | 上传 bin 目录 |
 | -- UPLOAD_FIRMWARE="true" | 上传固件目录 |
-| -- UPLOAD_COWTRANSFER="true" | 上传固件到奶牛快传 |
-| -- UPLOAD_WETRANSFER="true" | 上传固件到 WeTransfer |
 | -- UPLOAD_BRANCH="true" | 上传分支 |
 | -- CREATE_RELEASE="true" | 创建+上传发布 |
 | -- BUILD_USER="danxiaonuo" | 编译者 |
